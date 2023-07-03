@@ -1,0 +1,22 @@
+<!--TODO-->
+<!--Hacer la maquetacion de lo que se va a mostrar de los detalles de la pelicula!!!-->
+
+<div class="container" *ngIf="!isLoading">
+    <div class="row " *ngIf="movieDetails">
+      <div class="col-lg-6">
+        <img [src]="movieImageBack" class="img img-fluid" alt="Imagen" />
+      </div>
+      <div class="col-lg-6">
+        <div class="container text-container p-4">
+            <h3>{{ movieDetails.title }}</h3>
+            <p>{{ movieDetails.overview }}</p>
+            <div class="d-flex flex-wrap" >
+                <span class="span-genre" *ngFor="let genre of movieDetails.genres">{{ genre?.name }}</span>
+            </div>
+            <p class="mt-2">Popularity: {{ movieDetails.popularity }}</p>
+            <button class="btn btn-primary2" (click)="backHome()"><i class="bi bi-arrow-left"></i> Back</button>
+        </div>
+      </div>
+    </div>
+</div>
+<app-spinner *ngIf="isLoading"></app-spinner>

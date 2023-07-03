@@ -1,0 +1,13 @@
+<div class="poster-card" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}">
+  <p class="average">{{movie?.vote_average}}</p>
+    <div class="card-body text-center flex-column d-flex align-items-center justify-content-center" (click)="goToDetails()">
+      <!-- Contenido de la card -->
+      <p class="text-center">{{getName()}}</p>
+      <div class="row" *ngFor="let genre of getGenres()">
+        <span *ngIf="genre !== 'undefined'" class="genre">{{genre}}</span>
+      </div>
+      <div class="mt-2">
+        <a class="see-more-link" (click)="goToDetails()">See more -></a>
+      </div>
+    </div>
+</div>

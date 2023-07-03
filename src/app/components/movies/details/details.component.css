@@ -1,0 +1,30 @@
+
+h2,h3,p{
+    color: #f2f2f2;
+    line-height: 1.8;
+}
+
+.text-container{
+    margin-top: 8rem;
+}
+
+.img{
+    margin-top: 5rem;
+    height: auto;
+    width: 100%;
+}
+
+.span-genre{
+    margin: 0.3rem;
+    padding: 2px 8px;
+    border: 1px solid #f2f2f2;
+    background-color: #f01d1d;
+    color: #f2f2f2;
+    border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+    .text-container{
+        margin: 2rem;
+    }
+}

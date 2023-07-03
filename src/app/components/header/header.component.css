@@ -1,0 +1,18 @@
+.navbar-brand{
+    font-size: 38px;
+    color: #f01d1d;
+    font-weight: bold;
+}
+
+.navbar{
+    height: 6rem;
+    background-image: linear-gradient(to bottom, rgb(17, 17, 17), rgba(0, 0, 0, 0));
+}
+
+.navbar-toggler-icon{
+    color: #f01d1d !important;
+}
+
+.color-red{
+    color: #f01d1d;
+}
