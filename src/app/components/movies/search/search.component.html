@@ -1,2 +1,13 @@
 <!--TODO-->
 <!--Hacer una vista que implemnete la busqueda por nombre y que muestre en forma de cards las peliculas encontradas de coincidan la keyword pasada por el input-->
+<div class="container-custom">
+    <form class="input-search-contianer"[formGroup]="searchForm" (submit)="onSearchByKeyword()">
+        <input class="form-control" type="text" placeholder="Search here..." aria-label=".form-control-lg example" formControlName="keyword">
+        <button class="btn btn-primary2">Search</button>
+    </form>
+
+    <div class="container d-flex flex-wrap gap-3 justify-content-center mt-5" *ngIf="!isLoading">
+        <app-movie-card [movie]="movie" *ngFor="let movie of movieResult"></app-movie-card>
+    </div>
+    <app-spinner *ngIf="isLoading"></app-spinner>
+</div>

@@ -13,6 +13,8 @@ import { PopularTvComponent } from './components/movies/popular-tv/popular-tv.co
 import { DetailsComponent } from './components/movies/details/details.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchComponent } from './components/movies/search/search.component'
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { ReviewsComponent } from './components/movies/reviews/reviews.component'
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { SearchComponent } from './components/movies/search/search.component'
     PopularTvComponent,
     DetailsComponent,
     SpinnerComponent,
-    SearchComponent
+    SearchComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
