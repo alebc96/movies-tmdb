@@ -44,5 +44,9 @@ export class DetailsComponent implements OnInit {
     this.router.navigate(['/home'])
   }
 
+  goReviews(){
+    this.router.navigate(['/reviews'])
+  }
+
 
 }

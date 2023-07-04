@@ -14,7 +14,11 @@
                 <span class="span-genre" *ngFor="let genre of movieDetails.genres">{{ genre?.name }}</span>
             </div>
             <p class="mt-2">Popularity: {{ movieDetails.popularity }}</p>
-            <button class="btn btn-primary2" (click)="backHome()"><i class="bi bi-arrow-left"></i> Back</button>
+            <div class="container-fluid w-100">
+              <button class="btn btn-primary2 me-3" (click)="backHome()"><i class="bi bi-arrow-left"></i> Back</button>
+  
+              <button class="btn btn-primary3 m-4" (click)="goReviews()"><i class="bi bi-eye"></i> See Review</button>
+            </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PopularMoviesComponent } from './components/movies/popular-movies/popular-movies.component';
 import { DetailsComponent } from './components/movies/details/details.component';
 import { SearchComponent } from './components/movies/search/search.component';
+import { ReviewsComponent } from './components/movies/reviews/reviews.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'search-movie',
     component: SearchComponent
+  },
+  {
+    path: 'reviews',
+    component: ReviewsComponent
   },
   {
     path: '**',
