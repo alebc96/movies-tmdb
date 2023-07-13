@@ -1,1 +1,21 @@
-<p>reviews works!</p>
+<div class="container-custom">
+    <div class="container mt-5 mb-3">
+        <h1 *ngIf="!notReview()">Reviews</h1>
+        <h1 *ngIf="notReview()">Not Reviews</h1>
+    </div>
+    <div class="w-100" *ngIf="!isLoading">
+        <app-reviews-info [review]="review" *ngFor="let review of reviews"></app-reviews-info>
+    </div>
+    <div *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="notReview()">
+        <div class="container d-flex justify-content-center align-items-center">
+            <img src="../../../../assets/images/undraw_void_-3-ggu.svg" alt="" width="300" height="300">
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn btn-primary2 mt-3 mb-5" (click)="backHome()"><i class="bi bi-arrow-left"></i> Back</button>
+    </div>
+</div>
+

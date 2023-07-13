@@ -14,7 +14,12 @@ import { DetailsComponent } from './components/movies/details/details.component'
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchComponent } from './components/movies/search/search.component'
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { ReviewsComponent } from './components/movies/reviews/reviews.component'
+import { ReviewsComponent } from './components/movies/reviews/reviews.component';
+import { ReviewsInfoComponent } from './components/movies/reviews-info/reviews-info.component';
+import { CastCardComponent } from './components/movies/cast-card/cast-card.component';
+import { ActionMoviesComponent } from './components/movies/action-movies/action-movies.component';
+import { AnimationMoviesComponent } from './components/movies/animation-movies/animation-movies.component';
+import { RomanceMoviesComponent } from './components/movies/romance-movies/romance-movies.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { ReviewsComponent } from './components/movies/reviews/reviews.component'
     DetailsComponent,
     SpinnerComponent,
     SearchComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ReviewsInfoComponent,
+    CastCardComponent,
+    ActionMoviesComponent,
+    AnimationMoviesComponent,
+    RomanceMoviesComponent
   ],
   imports: [
     BrowserModule,

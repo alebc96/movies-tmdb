@@ -1,0 +1,22 @@
+.cast-card{
+    text-align: center;
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cast-card > img{
+    max-height: 180px;
+    min-height: 180px;
+    width: 120px;
+    margin-bottom: 2px;
+}
+
+.cast-card > p{
+    width: 100%;
+    font-size: 15px;
+    line-height: 1;
+    color: #f2f2f2;
+}

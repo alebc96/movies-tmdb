@@ -1,0 +1,12 @@
+.container{
+    overflow: scroll;
+}
+
+.container::-webkit-scrollbar {
+    display: none; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.title{
+    color: #f2f2f2;
+}

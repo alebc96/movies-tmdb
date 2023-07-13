@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Movie, MovieResult } from '../interfaces/moviesInterfaces';
 import { TvResults } from '../interfaces/tvInterfaces';
 import { Genres } from '../interfaces/genre';
+import { ReviewResult } from '../interfaces/review';
+import { CreditsResult } from '../interfaces/credits';
 
 const headers = {
   'Authorization': environment.Bearer,
@@ -47,6 +49,21 @@ export class MoviesService {
     const url = `${environment.BASE_URL}/3/search/movie`
     const params = new HttpParams().set('query', keyword)
     return this.http.get<MovieResult>(url, { params, headers })
+  }
+
+  public getResultReview(movie_id: string): Observable<ReviewResult>{
+    const url = `${environment.BASE_URL}/3/movie/${movie_id}/reviews`
+    return this.http.get<ReviewResult>(url, { headers })
+  }
+
+  public getCastByMovieId(movie_id: string): Observable<CreditsResult>{
+    const url = `${environment.BASE_URL}/3/movie/${movie_id}/credits`
+    return this.http.get<CreditsResult>(url, {headers})
+  }
+
+  public getMoviesByGenre(genre: any): Observable<MovieResult>{
+    const url = `${environment.BASE_URL}/3/discover/movie?api_key=${environment.apiKey}&with_genres=${genre}`
+    return this.http.get<MovieResult>(url, { headers })
   }
 
 }

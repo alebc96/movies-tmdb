@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'reviews',
+    path: 'reviews/:id',
     component: ReviewsComponent
   },
   {

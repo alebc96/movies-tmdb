@@ -39,11 +39,11 @@ export class SearchComponent implements OnInit{
 
   onSearchByKeyword(){
     this.isLoading = true
-    console.log(this.searchForm.value.keyword)
+    //console.log(this.searchForm.value.keyword)
     this.moviesService.searchMovieByKeyword(this.searchForm.value.keyword).subscribe({
       next: data => {
         this.movieResult = data.results
-        console.log(data.results)
+        //console.log(data.results)
         this.isLoading = false
       },
       error: error => {

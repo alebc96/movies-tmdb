@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MovieDetails } from 'src/app/interfaces/movieDetails';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Genres } from 'src/app/interfaces/genre';
+import { Cast } from 'src/app/interfaces/credits';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Genres } from 'src/app/interfaces/genre';
 })
 export class DetailsComponent implements OnInit {
   movieDetails!: MovieDetails;
+  movieCast!: Cast[];
   movieImagePoster: string = ''
   movieImageBack: string = ''
 
@@ -32,12 +34,29 @@ export class DetailsComponent implements OnInit {
           this.movieDetails = data;
           this.movieImageBack = 'https://image.tmdb.org/t/p/w500' + this.movieDetails.poster_path
           this.isLoading = false
+          this.getCast()
         },
         error: error => {
           console.log(error)
           this.isLoading = false
         }
       });
+
+  }
+
+  getCast(): void{
+    this.isLoading = true
+    this.movieService.getCastByMovieId(this.route.snapshot.params['id'])
+      .subscribe({
+        next: data => {
+          this.movieCast = data.cast
+          this.isLoading = false
+        },
+        error: error => {
+          console.log(error)
+          this.isLoading = false
+        }
+      })
   }
 
   backHome(){
@@ -45,7 +64,7 @@ export class DetailsComponent implements OnInit {
   }
 
   goReviews(){
-    this.router.navigate(['/reviews'])
+    this.router.navigate(['/reviews/' + this.route.snapshot.params['id']])
   }
 
 
