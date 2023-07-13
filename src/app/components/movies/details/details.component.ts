@@ -4,6 +4,7 @@ import { MovieDetails } from 'src/app/interfaces/movieDetails';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Genres } from 'src/app/interfaces/genre';
 import { Cast } from 'src/app/interfaces/credits';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class DetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private movieService: MoviesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +62,7 @@ export class DetailsComponent implements OnInit {
   }
 
   backHome(){
-    this.router.navigate(['/home'])
+    this.location.back()
   }
 
   goReviews(){
